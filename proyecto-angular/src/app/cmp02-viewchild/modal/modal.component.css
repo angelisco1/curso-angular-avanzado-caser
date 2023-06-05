@@ -1,0 +1,14 @@
+div#modal {
+  width: 40%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.header {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,8 @@
+<div *ngIf="estaAbierto" id="modal">
+  <div class="header">
+    <button (click)="cerrarModal()">X</button>
+  </div>
+  <div class="">
+    <ng-content></ng-content>
+  </div>
+</div>
