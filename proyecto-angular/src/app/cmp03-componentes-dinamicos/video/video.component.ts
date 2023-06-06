@@ -7,5 +7,5 @@ import { MediaType } from '../media.type';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent {
-  @Input() video: MediaType | null = null
+  @Input() item: MediaType | null = null
 }

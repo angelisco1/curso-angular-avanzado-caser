@@ -1,0 +1,9 @@
+<div *ngIf="digimon; else loading">
+  <h2>{{digimon.name}}</h2>
+  <img [src]="digimon.img" alt="Imagen de {{digimon.name}}">
+  <p>Level: {{digimon.level}}</p>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

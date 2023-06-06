@@ -3,6 +3,7 @@ import { MediaType } from './media.type';
 import { AudioComponent } from './audio/audio.component';
 import { VideoComponent } from './video/video.component';
 import { HostDirective } from './host.directive';
+import { ModalComponent } from '../cmp02-viewchild/modal/modal.component';
 
 @Component({
   selector: 'app-cmp03-componentes-dinamicos',
@@ -11,6 +12,7 @@ import { HostDirective } from './host.directive';
 })
 export class Cmp03ComponentesDinamicosComponent {
   @ViewChild(HostDirective) host: HostDirective | null = null
+  @ViewChild('modal') modal: ModalComponent | null = null
 
   listaMediaItems: Array<MediaType & { tipo: 'audio' | 'video' }> = [
     { titulo: 'Canción 1', src: 'assets/audio1.mp3', tipo: 'audio' },
@@ -24,14 +26,17 @@ export class Cmp03ComponentesDinamicosComponent {
   mostrarMedia(item: MediaType & { tipo: 'audio' | 'video' }) {
     const vcr: ViewContainerRef = this.host!.viewContainerRef
 
+    vcr.clear()
+
     const tipoComponent = item.tipo === 'audio' ? AudioComponent : VideoComponent
     const component: ComponentRef<AudioComponent | VideoComponent> = vcr.createComponent(tipoComponent)
 
     // const src = item.src
     // const titulo = item.titulo
     const { src, titulo } = item
-    component.instance.video = { src, titulo }
+    component.instance.item = { src, titulo }
 
+    this.modal?.abrirModal()
   }
 
 }

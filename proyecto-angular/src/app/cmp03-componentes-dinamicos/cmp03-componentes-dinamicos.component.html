@@ -7,3 +7,19 @@
 <ul>
   <li *ngFor="let item of listaMediaItems" (click)="mostrarMedia(item)">{{item.titulo}}</li>
 </ul>
+
+<hr>
+
+<ul>
+  <li>
+    <a appMiRouterLink="/">Ir a Inicio</a>
+  </li>
+  <li>
+    <a appMiRouterLink="/carrito">Ir a Carrito compra</a>
+  </li>
+</ul>
+
+
+<app-mi-router-outlet></app-mi-router-outlet>
+
+<hr>
