@@ -29,16 +29,16 @@ export class DigimonInfoComponent {
       .subscribe((data: Digimon) => {
         this.digimon = data
       })
+  }
 
-
-
-
-    // this.route.paramMap.subscribe((params: ParamMap) => {
-    //   const digimonName = params.get('name')
-
-    //   this.digimonsService.getDigimonByName(digimonName)
-    //   // .subscribe()
-    // })
+  toggleFav() {
+    this.digimonsService.addFavDigimon(this.digimon!)
+      .subscribe((data: any) => {
+        console.log({ data })
+        if (this.digimon) {
+          this.digimon.fav = data.añadido
+        }
+      })
   }
 
 }

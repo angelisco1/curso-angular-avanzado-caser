@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proyecto-angular-universal": {
+    "proyecto-angular-ngrx": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proyecto-angular-universal/browser",
+            "outputPath": "dist/proyecto-angular-ngrx",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "proyecto-angular-universal:build:production"
+              "browserTarget": "proyecto-angular-ngrx:build:production"
             },
             "development": {
-              "browserTarget": "proyecto-angular-universal:build:development"
+              "browserTarget": "proyecto-angular-ngrx:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "proyecto-angular-universal:build"
+            "browserTarget": "proyecto-angular-ngrx:build"
           }
         },
         "test": {
@@ -91,60 +91,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/proyecto-angular-universal/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "proyecto-angular-universal:build:development",
-              "serverTarget": "proyecto-angular-universal:server:development"
-            },
-            "production": {
-              "browserTarget": "proyecto-angular-universal:build:production",
-              "serverTarget": "proyecto-angular-universal:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ],
-            "routesFile": "rutas-digimons.txt"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "proyecto-angular-universal:build:production",
-              "serverTarget": "proyecto-angular-universal:server:production"
-            },
-            "development": {
-              "browserTarget": "proyecto-angular-universal:build:development",
-              "serverTarget": "proyecto-angular-universal:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

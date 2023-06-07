@@ -1,5 +1,7 @@
 <h2>Digimons</h2>
 
 <ul>
-  <li *ngFor="let digimon of digimons"><a [routerLink]="['/digimon', digimon.name]">{{digimon.name}}</a></li>
+  <li *ngFor="let digimon of digimons"><a [routerLink]="['/digimon', digimon.name]">
+      {{digimon.name}} {{digimon.fav ? '(Fav)' : ''}}
+    </a></li>
 </ul>

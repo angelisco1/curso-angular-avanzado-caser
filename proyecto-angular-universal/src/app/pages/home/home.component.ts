@@ -19,6 +19,10 @@ export class HomeComponent {
       .subscribe((data: Digimons) => {
         this.digimons = data
       })
+    this.digimonsService.getFavDigimons()
+      .subscribe((data: Digimons) => {
+        console.log({ data })
+      })
   }
 
 }

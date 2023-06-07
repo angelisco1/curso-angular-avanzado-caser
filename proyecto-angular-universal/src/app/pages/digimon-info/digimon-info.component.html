@@ -1,5 +1,6 @@
 <div *ngIf="digimon; else loading">
   <h2>{{digimon.name}}</h2>
+  <button type="button" (click)="toggleFav()">{{digimon.fav ? 'Quitar de mis favoritos' : 'Marcar como favorito'}}</button>
   <img [src]="digimon.img" alt="Imagen de {{digimon.name}}">
   <p>Level: {{digimon.level}}</p>
 </div>
