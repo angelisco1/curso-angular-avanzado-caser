@@ -1,0 +1,7 @@
+<h2>Contador</h2>
+
+<div>
+  <button type="button" (click)="decrementar()">-</button>
+  <span>Cuenta: <input type="number" [value]="cuenta" (change)="cambiarCuenta($event)" /></span>
+  <button type="button" (click)="incrementar()">+</button>
+</div>

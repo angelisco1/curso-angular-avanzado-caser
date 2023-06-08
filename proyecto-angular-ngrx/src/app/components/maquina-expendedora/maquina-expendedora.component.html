@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <label for="codigo">Código:</label>
+    <input type="number" id="codigo" name="codigo" [(ngModel)]="codigo">
+  </div>
+  <button type="button" (click)="sacarProducto()">Sacar producto</button>
+</div>
+
+<div>
+  <div *ngFor="let producto of productos">
+    <pre>{{producto | json}}</pre>
+  </div>
+</div>
