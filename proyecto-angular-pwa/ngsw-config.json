@@ -12,6 +12,9 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         ]
       }
     },
@@ -24,6 +27,30 @@
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "ofertas",
+      "urls": [
+        "http://localhost:8080/ofertas"
+      ],
+      "cacheConfig": {
+        "maxSize": 6,
+        "maxAge": "2m",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "perfil",
+      "urls": [
+        "http://localhost:8080/perfil"
+      ],
+      "cacheConfig": {
+        "maxSize": 2,
+        "maxAge": "2m",
+        "strategy": "performance"
       }
     }
   ]

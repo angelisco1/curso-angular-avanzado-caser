@@ -1,1 +1,13 @@
-<p>oferta-info works!</p>
+<div *ngIf="oferta; else loading">
+  <h2>{{oferta.titulo}}</h2>
+  <div>
+    <p>Empresa: {{oferta.empresa}}</p>
+    <p>Ciudad: {{oferta.ciudad}}</p>
+    <p>Salario: {{oferta.salario | currency}}</p>
+  </div>
+  <p>{{oferta.descripcion}}</p>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

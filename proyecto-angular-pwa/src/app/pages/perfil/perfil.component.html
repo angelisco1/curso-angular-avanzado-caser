@@ -1,0 +1,18 @@
+<h2>Perfil</h2>
+
+<div *ngIf="usuario; else loading">
+  <p>Nombre: {{usuario.nombre}}</p>
+  <p>Apellidos: {{usuario.apellidos}}</p>
+  <p>Email: {{usuario.email}}</p>
+
+  <hr>
+
+  <h3>Actualiza tus datos</h3>
+
+  <app-form-usuario [usuario]="usuario" (guardarUsuario)="actualizar($event)"></app-form-usuario>
+
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

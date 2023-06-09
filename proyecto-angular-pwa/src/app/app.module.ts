@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormOfertaComponent } from './components/form-oferta/form-oferta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { NuevoUsuarioComponent } from './pages/nuevo-usuario/nuevo-usuario.component';
+import { FormUsuarioComponent } from './components/form-usuario/form-usuario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     OfertaInfoComponent,
     NewOfertaComponent,
     HeaderComponent,
-    FormOfertaComponent
+    FormOfertaComponent,
+    PerfilComponent,
+    NuevoUsuarioComponent,
+    FormUsuarioComponent
   ],
   imports: [
     BrowserModule,

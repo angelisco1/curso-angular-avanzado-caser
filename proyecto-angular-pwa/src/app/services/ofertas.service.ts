@@ -18,13 +18,12 @@ export class OfertasService {
     return this.http.get<Ofertas>(this.apiUrl)
   }
 
-  getOferta() {
-
+  getOferta(ofertaId: string): Observable<Oferta> {
+    return this.http.get<Oferta>(`${this.apiUrl}/${ofertaId}`)
   }
 
-  // TODO: los tipos
-  createOferta(oferta: Oferta): Observable<any> {
-    return this.http.post(this.apiUrl, oferta)
+  createOferta(oferta: Oferta): Observable<Oferta> {
+    return this.http.post<Oferta>(this.apiUrl, oferta)
   }
 
 }

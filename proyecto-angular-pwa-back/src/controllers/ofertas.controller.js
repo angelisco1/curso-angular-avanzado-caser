@@ -1,10 +1,11 @@
 const axios = require('axios')
+const config = require('../../config')
 
-const FIREBASE_URL = 'https://ejemplos-dc1c1.firebaseio.com/curso-angular-avanzado-caser/angel/ofertas'
+const OFERTAS_URL = `${config.FIREBASE_URL}/ofertas`
 
 
 const getOfertas = async (req, res) => {
-  const resp = await axios.get(`${FIREBASE_URL}.json`)
+  const resp = await axios.get(`${OFERTAS_URL}.json`)
   const ofertas = resp.data
 
   const listaOfertas = []
@@ -18,13 +19,19 @@ const getOfertas = async (req, res) => {
   return res.json(listaOfertas)
 }
 
-const getOfertaById = (req, res) => {
-  return res.json({ ok: true })
+const getOfertaById = async (req, res) => {
+  const ofertaId = req.params.ofertaId
+  const resp = await axios.get(`${OFERTAS_URL}/${ofertaId}.json`)
+
+  const oferta = resp.data
+  oferta.id = ofertaId
+
+  return res.json(oferta)
 }
 
 const createOferta = async (req, res) => {
   const oferta = req.body
-  const resp = await axios.post(`${FIREBASE_URL}.json`, oferta)
+  const resp = await axios.post(`${OFERTAS_URL}.json`, oferta)
 
   const ofertaId = resp.data.name
   // { name: 'id-de-la-oferta'}

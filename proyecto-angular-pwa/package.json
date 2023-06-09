@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:serve": "npm run build && npx http-server ./dist/proyecto-angular-pwa"
   },
   "private": true,
   "dependencies": {
