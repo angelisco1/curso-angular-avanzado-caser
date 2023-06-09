@@ -1,5 +1,7 @@
 const axios = require('axios')
+const webpush = require('web-push')
 const config = require('../../config')
+const { FIREBASE_SUSCRIPCIONES_URL } = require('./suscripciones.controller')
 
 const OFERTAS_URL = `${config.FIREBASE_URL}/ofertas`
 
@@ -34,8 +36,21 @@ const createOferta = async (req, res) => {
   const resp = await axios.post(`${OFERTAS_URL}.json`, oferta)
 
   const ofertaId = resp.data.name
-  // { name: 'id-de-la-oferta'}
   oferta.id = ofertaId
+
+  const respSuscripciones = await axios.get(FIREBASE_SUSCRIPCIONES_URL)
+
+  const payload = {
+    notification: {
+      title: 'Nueva oferta 🎊',
+      body: `${oferta.titulo} (${oferta.salario}$)`
+    }
+  }
+
+  Object.values(respSuscripciones.data).forEach(async suscripcion => {
+    await webpush.sendNotification(suscripcion, JSON.stringify(payload))
+    console.log('Notificación enviada...')
+  })
 
   return res.status(201).json(oferta)
 }

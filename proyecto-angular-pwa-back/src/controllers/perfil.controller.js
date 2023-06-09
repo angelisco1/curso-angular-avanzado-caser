@@ -27,8 +27,6 @@ const updatePerfil = async (req, res) => {
   const usuario = req.body
   const resp = await axios.put(`${PERFIL_URL}/${usuario.id}.json`, usuario)
 
-  console.log({ data: resp.data })
-
   return res.json(usuario)
 }
 

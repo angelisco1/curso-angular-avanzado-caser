@@ -1,5 +1,9 @@
 <div class="container">
-  <h1>Mis ofertas de trabajo</h1>
+  <h1>{{'APP.titulo' | translate}}</h1>
+  <select [value]="selectedLanguage" (change)="changeLang($event)">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+  </select>
 
   <app-header></app-header>
 

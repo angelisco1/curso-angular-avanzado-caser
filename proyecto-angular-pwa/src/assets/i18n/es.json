@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "titulo": "Mis ofertas de trabajo",
+    "inicio": "Inicio",
+    "crea-una-oferta": "Crea una oferta",
+    "registro": "Registro",
+    "mi-perfil": "Mi perfil"
+  },
+  "HOME": {
+    "titulo": "Ofertas",
+    "ver-oferta": "Ver oferta"
+  }
+}

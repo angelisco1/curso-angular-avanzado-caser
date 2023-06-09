@@ -48,7 +48,7 @@
         "http://localhost:8080/perfil"
       ],
       "cacheConfig": {
-        "maxSize": 2,
+        "maxSize": 4,
         "maxAge": "2m",
         "strategy": "performance"
       }
